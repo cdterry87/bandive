@@ -20,7 +20,9 @@ This project is a very minimal starter that includes 2 sample components, a glob
 
 ## Getting Started
 
-First, run the development server:
+First copy `.env.sample` as `.env` and set the variables for the Spotify API.
+
+Then, run the development server:
 
 ```bash
 npm run dev
