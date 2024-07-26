@@ -6,7 +6,7 @@ const logo = Covered_By_Your_Grace({
 })
 
 const Logo = ({ isFormShown }) => {
-  let animationClasses = isFormShown ? 'animate__fadeInDown' : 'animate__fadeIn'
+  let animationClasses = isFormShown ? 'animate__fadeInDown' : ''
 
   return (
     <div>
