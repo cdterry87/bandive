@@ -1,3 +1,5 @@
+import 'animate.css'
+
 import { useState } from 'react'
 
 import { Jost } from 'next/font/google'
@@ -92,8 +94,13 @@ const IndexPage = () => {
     if (!player) return
 
     player.pause()
-    setPlayer(null)
+    setPlayingArtist(null)
     setPlayingTrack(null)
+
+    // Wait a couple of seconds before clearing out the player to allow the animation to finish
+    setTimeout(() => {
+      setPlayer(null)
+    }, 2000)
   }
 
   const startOver = () => {
@@ -129,6 +136,7 @@ const IndexPage = () => {
                     artist={artist}
                     selectArtist={selectArtist}
                     withoutActionButtons
+                    animationClasses='animate__fadeIn'
                   />
                 ))}
               </div>
@@ -144,6 +152,7 @@ const IndexPage = () => {
                   selectArtist={selectArtist}
                   previewArtist={previewArtist}
                   startOver={startOver}
+                  animationClasses='animate__zoomIn'
                   isSelectedArtist
                 />
               </div>
@@ -158,6 +167,7 @@ const IndexPage = () => {
                       artist={relatedArtist}
                       selectArtist={selectArtist}
                       previewArtist={previewArtist}
+                      animationClasses='animate__fadeIn'
                     />
                   ))}
                 </div>
@@ -165,7 +175,7 @@ const IndexPage = () => {
             </div>
           )}
 
-          {player && playingTrack && (
+          {player && (
             <PlayerDetails
               playingArtist={playingArtist}
               playingTrack={playingTrack}
