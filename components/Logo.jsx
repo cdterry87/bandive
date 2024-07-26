@@ -20,7 +20,7 @@ const Logo = ({ isFormShown }) => {
         <h1
           className={
             logo.className +
-            ' font-bold uppercase ' +
+            ' font-bold uppercase tracking-wide ' +
             (isFormShown ? 'text-7xl' : 'text-4xl')
           }
         >
