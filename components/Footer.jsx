@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <footer className='pt-12'>
-      <div className='flex flex-col gap-6 items-center text-center text-xs'>
+    <footer className='pt-12 w-full'>
+      <div className='flex flex-col gap-6 items-center text-center text-xs w-full'>
         <div className='flex flex-col items-center gap-2'>
           <p className='italic'>Developed with</p>
           <a

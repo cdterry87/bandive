@@ -6,30 +6,36 @@ const logo = Covered_By_Your_Grace({
 })
 
 const Logo = ({ isFormShown }) => {
+  let animationClasses = isFormShown
+    ? 'animate__fadeInDown'
+    : 'animate__fadeInUp'
+
   return (
-    <div>
-      <div className='flex flex-col items-center gap-2'>
-        <a href='/'>
-          <h1
-            className={
-              logo.className +
-              ' font-bold uppercase ' +
-              (isFormShown ? 'text-7xl' : 'text-4xl')
-            }
-          >
-            Bandive
-          </h1>
-        </a>
-        <p
+    <div
+      className={
+        'flex flex-col items-center gap-2 animate__animated ' + animationClasses
+      }
+    >
+      <a href='/'>
+        <h1
           className={
             logo.className +
-            ' text-center tracking-widest leading-9 ' +
-            (isFormShown ? 'text-2xl' : 'text-lg')
+            ' font-bold uppercase ' +
+            (isFormShown ? 'text-7xl' : 'text-4xl')
           }
         >
-          Find recommendations based on your favorite artists!
-        </p>
-      </div>
+          Bandive
+        </h1>
+      </a>
+      <p
+        className={
+          logo.className +
+          ' text-center tracking-widest leading-9 ' +
+          (isFormShown ? 'text-2xl' : 'text-lg')
+        }
+      >
+        Find recommendations based on your favorite artists!
+      </p>
     </div>
   )
 }

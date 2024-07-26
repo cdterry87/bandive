@@ -109,8 +109,12 @@ const IndexPage = () => {
   }
 
   return (
-    <div className={defaultFont.className}>
-      <div className='min-h-screen flex items-center justify-center bg-slate-950 text-slate-50'>
+    <div
+      className={
+        defaultFont.className + ' min-h-screen bg-slate-950 text-slate-50'
+      }
+    >
+      <div className='flex items-center justify-center mx-8'>
         <div className='flex flex-col items-center gap-10 py-16 px-4 sm:px-6'>
           <Logo isFormShown={showForm} />
           {showForm && (
@@ -122,7 +126,7 @@ const IndexPage = () => {
           )}
 
           {artists.length > 0 && !selectedArtist && (
-            <div className='flex flex-col items-center justify-center gap-12'>
+            <div className='flex flex-col items-center justify-center gap-12 w-full'>
               <SelectArtistOrStartOver startOver={startOver} />
 
               <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12'>
@@ -132,6 +136,7 @@ const IndexPage = () => {
                     artist={artist}
                     selectArtist={selectArtist}
                     withoutActionButtons
+                    animationClasses='animate__fadeIn'
                   />
                 ))}
               </div>
@@ -139,7 +144,7 @@ const IndexPage = () => {
           )}
 
           {selectedArtist && (
-            <div className='flex flex-col gap-10 items-center justify-center'>
+            <div className='flex flex-col gap-10 items-center justify-center w-full'>
               <div className='flex flex-col items-center gap-4'>
                 <Artist
                   key={selectedArtist.id}
@@ -147,6 +152,7 @@ const IndexPage = () => {
                   selectArtist={selectArtist}
                   previewArtist={previewArtist}
                   startOver={startOver}
+                  animationClasses='animate__zoomIn'
                   isSelectedArtist
                 />
               </div>
@@ -161,6 +167,7 @@ const IndexPage = () => {
                       artist={relatedArtist}
                       selectArtist={selectArtist}
                       previewArtist={previewArtist}
+                      animationClasses='animate__fadeIn'
                     />
                   ))}
                 </div>
