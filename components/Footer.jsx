@@ -23,9 +23,9 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className='flex items-center gap-2'>
+        <div className='flex flex-col sm:flex-row items-center gap-2'>
           <span>&copy; 2024. Created by Chase Terry.</span>
-          <span>|</span>
+          <span className='hidden sm:inline-block'>|</span>
           <a
             href='https://chaseterry.com'
             className='font-bold underline'
