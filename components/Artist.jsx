@@ -46,14 +46,14 @@ const Artist = ({
         <div
           className={
             (isSelectedArtist ? 'text-base' : 'text-xs') +
-            ' flex flex-col sm:flex-row items-center gap-2'
+            ' flex flex-row flex-wrap items-center justify-center gap-3'
           }
         >
           <Button
             text='Listen'
             icon='listen'
             onClick={() => previewArtist(artist.id, artist.name)}
-            classes='bg-violet-800 text-white w-full sm:w-auto '
+            classes='bg-violet-800 text-white'
             title='Listen to a clip of this artist'
           />
 
@@ -62,7 +62,7 @@ const Artist = ({
               href={artist.external_urls.spotify}
               target='_blank'
               referrerPolicy='noreferrer'
-              className='flex items-center gap-2 w-full sm:w-auto rounded-full bg-spotify-green text-spotify-black font-bold px-4 py-1 sm:py-2 hover:brightness-125 transition duration-300 ease-in-out'
+              className='flex items-center justify-center gap-2 rounded-full bg-spotify-green text-spotify-black font-bold px-4 py-1 sm:py-2 hover:brightness-125 transition duration-300 ease-in-out'
               title='View on Spotify'
             >
               <Icon name='spotify' />
@@ -75,7 +75,7 @@ const Artist = ({
               text='Start Over'
               icon='redo'
               onClick={startOver}
-              classes='bg-pink-800 text-white w-full sm:w-auto'
+              classes='bg-pink-800 text-white'
               title='Start Over'
             />
           )}
