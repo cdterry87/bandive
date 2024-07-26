@@ -17,6 +17,8 @@ function Application({ Component, pageProps }) {
           key='title'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
+        <link rel='manifest' href='/manifest.json' />
       </Head>
       <Component {...pageProps} />
     </>
