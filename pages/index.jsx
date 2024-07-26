@@ -96,11 +96,7 @@ const IndexPage = () => {
     player.pause()
     setPlayingArtist(null)
     setPlayingTrack(null)
-
-    // Wait a couple of seconds before clearing out the player to allow the animation to finish
-    setTimeout(() => {
-      setPlayer(null)
-    }, 2000)
+    setPlayer(null)
   }
 
   const startOver = () => {
