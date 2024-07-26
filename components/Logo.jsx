@@ -30,7 +30,7 @@ const Logo = ({ isFormShown }) => {
       <p
         className={
           logo.className +
-          ' text-center tracking-widest leading-9 ' +
+          ' text-center tracking-wide leading-9 ' +
           (isFormShown ? 'text-2xl' : 'text-lg')
         }
       >
