@@ -11,31 +11,34 @@ const Logo = ({ isFormShown }) => {
     : 'animate__fadeInUp'
 
   return (
-    <div
-      className={
-        'flex flex-col items-center gap-2 animate__animated ' + animationClasses
-      }
-    >
-      <a href='/'>
-        <h1
-          className={
-            logo.className +
-            ' font-bold uppercase ' +
-            (isFormShown ? 'text-7xl' : 'text-4xl')
-          }
-        >
-          Bandive
-        </h1>
-      </a>
-      <p
+    <div>
+      <div
         className={
-          logo.className +
-          ' text-center tracking-widest leading-9 ' +
-          (isFormShown ? 'text-2xl' : 'text-lg')
+          'flex flex-col items-center gap-2 animate__animated ' +
+          animationClasses
         }
       >
-        Find recommendations based on your favorite artists!
-      </p>
+        <a href='/'>
+          <h1
+            className={
+              logo.className +
+              ' font-bold uppercase ' +
+              (isFormShown ? 'text-7xl' : 'text-4xl')
+            }
+          >
+            Bandive
+          </h1>
+        </a>
+        <p
+          className={
+            logo.className +
+            ' text-center tracking-widest leading-9 ' +
+            (isFormShown ? 'text-2xl' : 'text-lg')
+          }
+        >
+          Find recommendations based on your favorite artists!
+        </p>
+      </div>
     </div>
   )
 }
