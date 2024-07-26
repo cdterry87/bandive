@@ -3,7 +3,8 @@ import {
   faHeadphones,
   faMagnifyingGlass,
   faArrowRotateRight,
-  faStop
+  faStop,
+  faWandMagicSparkles
 } from '@fortawesome/free-solid-svg-icons'
 import { faSpotify } from '@fortawesome/free-brands-svg-icons'
 
@@ -20,6 +21,8 @@ const Icon = ({ name }) => {
         return faStop
       case 'spotify':
         return faSpotify
+      case 'surprise':
+        return faWandMagicSparkles
       default:
         throw new Error(`Invalid icon name: ${name}`)
     }

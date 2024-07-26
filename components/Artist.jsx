@@ -6,6 +6,7 @@ const Artist = ({
   artist,
   selectArtist,
   previewArtist,
+  surpriseMe = null,
   startOver = null,
   isSelectedArtist = false,
   withoutActionButtons = false,
@@ -68,6 +69,16 @@ const Artist = ({
               <Icon name='spotify' />
               Spotify
             </a>
+          )}
+
+          {surpriseMe && (
+            <Button
+              text='Surprise Me'
+              icon='surprise'
+              onClick={surpriseMe}
+              classes='bg-blue-800 text-white'
+              title='Surprise Me'
+            />
           )}
 
           {startOver && (

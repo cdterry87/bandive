@@ -32,9 +32,9 @@ const IndexPage = () => {
   const searchArtists = async e => {
     e.preventDefault()
 
-    scrollToTop()
-
     if (query.length < 3) return
+
+    scrollToTop()
 
     try {
       const response = await fetch(`/api/search?q=${query}`)
@@ -51,11 +51,8 @@ const IndexPage = () => {
 
   const selectArtist = async artist => {
     scrollToTop()
-
+    stopPlayer()
     setSelectedArtist(artist)
-
-    // Scroll to the top of the page
-    window.scrollTo({ top: 0, behavior: 'smooth' })
 
     try {
       const response = await fetch(`/api/related-artists?id=${artist.id}`)
@@ -69,8 +66,7 @@ const IndexPage = () => {
   const previewArtist = async (artistId, artistName) => {
     if (!selectedArtist) return
 
-    // If player is playing, stop it
-    if (player) stopPlayer()
+    stopPlayer()
 
     try {
       const response = await fetch(`/api/top-tracks?id=${artistId}`)
@@ -100,6 +96,24 @@ const IndexPage = () => {
     }
   }
 
+  const surpriseMe = async () => {
+    if (!selectedArtist && !relatedArtists) return
+
+    stopPlayer()
+
+    // Pick a random artist from the related artists
+    const randomIndex = Math.floor(Math.random() * relatedArtists.length)
+    const randomArtist = relatedArtists[randomIndex]
+
+    if (!randomArtist) console.error('Error retrieving an artist')
+
+    // Preview the artist
+    previewArtist(randomArtist.id, randomArtist.name)
+
+    // If player wasn't set, try again
+    if (!player) console.error('Error playing track')
+  }
+
   const stopPlayer = () => {
     if (!player) return
 
@@ -116,6 +130,7 @@ const IndexPage = () => {
     setArtists([])
     setSelectedArtist(null)
     setRelatedArtists([])
+    scrollToTop()
   }
 
   return (
@@ -124,7 +139,7 @@ const IndexPage = () => {
         defaultFont.className + ' min-h-screen bg-slate-950 text-slate-50'
       }
     >
-      <div className='flex items-center justify-center mx-8'>
+      <div className='flex items-center justify-center mx-6'>
         <div className='flex flex-col items-center gap-10 py-16 px-4 sm:px-6'>
           <Logo isFormShown={showForm} />
           {showForm && (
@@ -161,6 +176,7 @@ const IndexPage = () => {
                   artist={selectedArtist}
                   selectArtist={selectArtist}
                   previewArtist={previewArtist}
+                  surpriseMe={surpriseMe}
                   startOver={startOver}
                   animationClasses='animate__zoomIn'
                   isSelectedArtist
