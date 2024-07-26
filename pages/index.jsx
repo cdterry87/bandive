@@ -26,8 +26,14 @@ const IndexPage = () => {
   const [playingTrack, setPlayingTrack] = useState(null)
   const [player, setPlayer] = useState(null)
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   const searchArtists = async e => {
     e.preventDefault()
+
+    scrollToTop()
 
     if (query.length < 3) return
 
@@ -45,7 +51,12 @@ const IndexPage = () => {
   }
 
   const selectArtist = async artist => {
+    scrollToTop()
+
     setSelectedArtist(artist)
+
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' })
 
     try {
       const response = await fetch(`/api/related-artists?id=${artist.id}`)
