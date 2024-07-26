@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <footer className='pt-12 w-full'>
       <div className='flex flex-col gap-6 items-center text-center text-xs w-full'>
-        <div className='flex flex-col items-center gap-2'>
-          <p className='italic'>Developed with</p>
+        <div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4'>
+          <p>Built with data from</p>
           <a
             href='https://spotify.com'
             target='_blank'
@@ -19,6 +19,7 @@ const Footer = () => {
               width={160}
               height={48}
               className='hover:scale-105 hover:brightness-110 transition duration-300 ease-in-out'
+              priority
             />
           </a>
         </div>

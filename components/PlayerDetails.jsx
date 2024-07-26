@@ -1,5 +1,3 @@
-import 'animate.css'
-
 import Button from '@components/Button'
 import SoundWaves from '@components/SoundWaves'
 
@@ -15,9 +13,10 @@ const PlayerDetails = ({ playingArtist, playingTrack, stopPlayer }) => {
           </div>
           <Button
             text='Stop'
+            icon='stop'
             onClick={stopPlayer}
             classes='w-32 sm:w-auto bg-violet-950 text-violet-200'
-            title='Stop Track'
+            title='Stop Playback'
           />
         </div>
       </div>

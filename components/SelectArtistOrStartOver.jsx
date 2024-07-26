@@ -7,6 +7,7 @@ const SelectArtistOrStartOver = ({ startOver }) => {
       <span>or</span>
       <Button
         text='Search Again'
+        icon='redo'
         onClick={startOver}
         classes='bg-gradient-to-r from-pink-800 to-violet-800 text-white w-40 sm:w-52'
         title='Start Over'

@@ -3,7 +3,6 @@ import 'animate.css'
 import { useState } from 'react'
 
 import { Jost } from 'next/font/google'
-
 const defaultFont = Jost({
   weight: '400',
   subsets: ['latin']
@@ -168,7 +167,7 @@ const IndexPage = () => {
                 />
               </div>
 
-              <hr class='w-full p-0.5 border-none bg-gradient-to-r from-violet-950 to-pink-950 rounded-full' />
+              <hr className='w-full p-0.5 border-none bg-gradient-to-r from-violet-950 to-pink-950 rounded-full' />
 
               {relatedArtists && relatedArtists.length > 0 && (
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12'>

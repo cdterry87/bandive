@@ -9,6 +9,10 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@netlify/plugin-nextjs": "^5.5.1",
     "animate.css": "^4.1.1",
     "js-cookie": "^3.0.5",

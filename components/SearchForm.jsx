@@ -6,7 +6,7 @@ const SearchForm = ({ query, setQuery, searchArtists }) => {
       onClick={searchArtists}
       className='flex flex-col items-center gap-6 w-full'
     >
-      <h2 className='text-3xl font-bold '>Search for Artists</h2>
+      <h2 className='text-3xl font-bold'>Search for Artists</h2>
       <input
         type='search'
         value={query}
@@ -17,6 +17,7 @@ const SearchForm = ({ query, setQuery, searchArtists }) => {
       />
       <Button
         text='Search'
+        icon='search'
         type='submit'
         classes='bg-gradient-to-r from-violet-800 to-pink-800 text-white w-40 sm:w-64 py-2'
         title='Search for an artist'

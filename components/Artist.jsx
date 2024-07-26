@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Button from '@components/Button'
+import Icon from '@components/Icon'
 
 const Artist = ({
   artist,
@@ -25,7 +26,7 @@ const Artist = ({
           <img
             src={artist.images[0].url}
             alt={'Select ' + artist.name}
-            className='w-48 h-48 border-4 border-white hover:border-violet-700 hover:scale-110 transition duration-300 ease-in-out'
+            className='w-48 h-48 border-4 border-white hover:border-violet-700 hover:scale-110 transition duration-300 ease-in-out shadow-lg hover:shadow-violet-950'
           />
         ) : (
           <Image
@@ -49,7 +50,8 @@ const Artist = ({
           }
         >
           <Button
-            text='Preview'
+            text='Listen'
+            icon='listen'
             onClick={() => previewArtist(artist.id, artist.name)}
             classes='bg-violet-800 text-white w-full sm:w-auto '
             title='Listen to a clip of this artist'
@@ -60,16 +62,18 @@ const Artist = ({
               href={artist.external_urls.spotify}
               target='_blank'
               referrerPolicy='noreferrer'
-              className='w-full sm:w-auto rounded-full bg-spotify-green text-spotify-black font-bold px-4 py-1 sm:py-2 hover:brightness-125 transition duration-300 ease-in-out'
+              className='flex items-center gap-2 w-full sm:w-auto rounded-full bg-spotify-green text-spotify-black font-bold px-4 py-1 sm:py-2 hover:brightness-125 transition duration-300 ease-in-out'
               title='View on Spotify'
             >
-              View on Spotify
+              <Icon name='spotify' />
+              Spotify
             </a>
           )}
 
           {startOver && (
             <Button
               text='Start Over'
+              icon='redo'
               onClick={startOver}
               classes='bg-pink-800 text-white w-full sm:w-auto'
               title='Start Over'
