@@ -6,16 +6,9 @@ const logo = Covered_By_Your_Grace({
 })
 
 const Logo = ({ isFormShown }) => {
-  let animationClasses = isFormShown ? 'animate__fadeInDown' : ''
-
   return (
     <div>
-      <div
-        className={
-          'flex flex-col items-center gap-2 animate__animated ' +
-          animationClasses
-        }
-      >
+      <div className='flex flex-col items-center gap-2'>
         <a href='/'>
           <h1
             className={

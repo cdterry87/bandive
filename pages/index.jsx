@@ -132,7 +132,6 @@ const IndexPage = () => {
                     artist={artist}
                     selectArtist={selectArtist}
                     withoutActionButtons
-                    animationClasses='animate__fadeIn'
                   />
                 ))}
               </div>
@@ -148,7 +147,6 @@ const IndexPage = () => {
                   selectArtist={selectArtist}
                   previewArtist={previewArtist}
                   startOver={startOver}
-                  animationClasses='animate__zoomIn'
                   isSelectedArtist
                 />
               </div>
@@ -163,7 +161,6 @@ const IndexPage = () => {
                       artist={relatedArtist}
                       selectArtist={selectArtist}
                       previewArtist={previewArtist}
-                      animationClasses='animate__fadeIn'
                     />
                   ))}
                 </div>

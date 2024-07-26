@@ -7,16 +7,14 @@ const Artist = ({
   previewArtist,
   startOver = null,
   isSelectedArtist = false,
-  withoutActionButtons = false,
-  animationClasses = null
+  withoutActionButtons = false
 }) => {
   return (
     <div className='flex flex-col items-center gap-4'>
       <button
         className={
           (isSelectedArtist ? 'cursor-default' : 'cursor-pointer') +
-          ' animate__animated flex flex-col items-center gap-4 group ' +
-          animationClasses
+          ' flex flex-col items-center gap-4 group '
         }
         title='Select this Artist'
         onClick={() => !isSelectedArtist && selectArtist(artist)}
