@@ -1,3 +1,5 @@
+import Button from '@components/Button'
+
 const SearchForm = ({ query, setQuery, searchArtists }) => {
   return (
     <form onClick={searchArtists} className='flex flex-col items-center gap-6'>
@@ -13,12 +15,12 @@ const SearchForm = ({ query, setQuery, searchArtists }) => {
         />
       </div>
       <div className='flex justify-center'>
-        <button
+        <Button
+          text='Search'
           type='submit'
-          className='bg-gradient-to-r from-violet-800 to-pink-800 text-white rounded-full px-4 py-2 w-40 sm:w-64 hover:brightness-125 transition duration-300 ease-in-out'
-        >
-          Search
-        </button>
+          classes='bg-gradient-to-r from-violet-800 to-pink-800 text-white w-40 sm:w-64'
+          title='Search for an artist'
+        />
       </div>
     </form>
   )

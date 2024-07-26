@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Button from '@components/Button'
 
 const Artist = ({
   artist,
@@ -42,23 +43,22 @@ const Artist = ({
         <div
           className={
             (isSelectedArtist ? 'text-base' : 'text-xs') +
-            ' flex items-center gap-2'
+            ' flex flex-col sm:flex-row items-center gap-2'
           }
         >
-          <button
+          <Button
+            text='Preview'
             onClick={() => previewArtist(artist.id, artist.name)}
-            className='rounded-full bg-violet-800 text-white px-4 py-2 hover:brightness-125 transition duration-300 ease-in-out'
+            classes='bg-violet-800 text-white w-full sm:w-auto '
             title='Listen to a clip of this artist'
-          >
-            Preview
-          </button>
+          />
 
           {artist.external_urls && artist.external_urls.spotify && (
             <a
               href={artist.external_urls.spotify}
               target='_blank'
               referrerPolicy='noreferrer'
-              className='rounded-full bg-spotify-green text-spotify-black font-bold px-4 py-2 hover:brightness-125 transition duration-300 ease-in-out'
+              className='w-full sm:w-auto rounded-full bg-spotify-green text-spotify-black font-bold px-4 py-1 sm:py-2 hover:brightness-125 transition duration-300 ease-in-out'
               title='View on Spotify'
             >
               View on Spotify
@@ -66,13 +66,12 @@ const Artist = ({
           )}
 
           {startOver && (
-            <button
-              onClick={() => startOver()}
-              className='rounded-full bg-pink-800 text-white px-4 py-2 hover:brightness-125 transition duration-300 ease-in-out'
+            <Button
+              text='Start Over'
+              onClick={startOver}
+              classes='bg-pink-800 text-white w-full sm:w-auto'
               title='Start Over'
-            >
-              Start Over
-            </button>
+            />
           )}
         </div>
       )}

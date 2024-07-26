@@ -1,17 +1,9 @@
-.soundWaveContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-
 .soundWave {
   width: 4px;
   height: 20px;
   background-color: #ddd6fe;
   animation: soundWave 1.2s linear infinite;
   transform-origin: bottom;
-  opacity: 0.5;
 }
 
 .soundWave:nth-child(1) {
@@ -48,6 +40,34 @@
 
 .soundWave:nth-child(9) {
   animation-delay: 1.6s;
+}
+
+.soundWave:nth-child(10) {
+  animation-delay: 1.8s;
+}
+
+.soundWave:nth-child(11) {
+  animation-delay: 2s;
+}
+
+.soundWave:nth-child(12) {
+  animation-delay: 2.2s;
+}
+
+.soundWave:nth-child(13) {
+  animation-delay: 2.4s;
+}
+
+.soundWave:nth-child(14) {
+  animation-delay: 2.6s;
+}
+
+.soundWave:nth-child(15) {
+  animation-delay: 2.8s;
+}
+
+.soundWave:nth-child(16) {
+  animation-delay: 3s;
 }
 
 @keyframes soundWave {
