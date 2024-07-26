@@ -1,0 +1,61 @@
+.soundWaveContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.soundWave {
+  width: 4px;
+  height: 20px;
+  background-color: #ddd6fe;
+  animation: soundWave 1.2s linear infinite;
+  transform-origin: bottom;
+  opacity: 0.5;
+}
+
+.soundWave:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.soundWave:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.soundWave:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.soundWave:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.soundWave:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.soundWave:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.soundWave:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+.soundWave:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+.soundWave:nth-child(9) {
+  animation-delay: 1.6s;
+}
+
+@keyframes soundWave {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}

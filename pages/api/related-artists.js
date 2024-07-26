@@ -1,24 +1,13 @@
-import SpotifyWebApi from 'spotify-web-api-node';
+import { spotifyApi, getAccessToken } from './utils';
 
 export default async (req, res) => {
     const { id } = req.query;
 
-    if (!id) {
-        return res.status(400).json({ error: 'Failed to get id of selected artist.' });
-    }
-
-    const spotifyApi = new SpotifyWebApi({
-        clientId: process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID,
-        clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-    });
+    if (!id) return res.status(400).json({ error: 'Could not get related artists. Failed to get id of selected artist.' });
 
     try {
-        const tokenData = await spotifyApi.clientCredentialsGrant();
-        const accessToken = tokenData.body['access_token'];
-        spotifyApi.setAccessToken(accessToken);
-
+        await getAccessToken();
         const data = await spotifyApi.getArtistRelatedArtists(id);
-
         res.status(200).json(data.body);
     } catch (error) {
         console.error('Error fetching related artists:', error);
