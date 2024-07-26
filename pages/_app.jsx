@@ -11,6 +11,7 @@ function Application({ Component, pageProps }) {
           content='Find recommendations based on your favorite artists with Bandive! By Chase Terry'
           key='title'
         />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
       <Component {...pageProps} />
     </>
